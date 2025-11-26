@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+</head>
+<body>
+    <h1>Lista de Tareas</h1>
+    <script type="text/javascript">
+        let v = [];
+        let nTareas = 3,
+            i = 0,
+            tarea = "";
+        while(i < 3){
+            tarea = prompt("Introduce una tarea");
+            v.push(tarea);
+            i++;
+        }
+        document.write("Numero de tareas introducidas: " + v.length + "<br>");
+        document.write(v);
+    </script>
+</body>
+</html>
