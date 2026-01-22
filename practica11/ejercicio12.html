@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <table id="tabla" border="1"></table>
+      <script>
+            let imagenes = ['moto.jpg','coche.png'],
+                  texto = ["Una moto","Un coche"],
+                  tabla = document.getElementById("tabla");
+                  for (let i = 0; i < imagenes.length; i++) {
+                        let fila = document.createElement("tr");
+                        let colImg = document.createElement("td");
+
+                        let img = document.createElement("img");
+                        img.setAttribute("src",imagenes[i]);
+                        img.setAttribute("width",100);
+                        colImg.appendChild(img);
+                        fila.appendChild(colImg);
+
+                        let colText = document.createElement("td");
+                        colText.innerHTML = texto[i];
+                        fila.appendChild(colText);
+                        
+                        tabla.appendChild(fila);
+                  }
+      </script>
+</body>
+</html>

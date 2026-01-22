@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <script>
+            function pulsado(){
+                  let datos = document.getElementsByName("dato");
+                  let dato1= datos[0].value;
+                  let totalInputs = datos.length;
+                  document.getElementById("info").innerHTML = "Primer valor " + dato1 + "<br>" + "Numero de inputs: " + totalInputs;
+            }
+      </script>
+      <label for="dato">Dato1</label>
+      <input type="text" name="dato" id="dato1"><br>
+      <label for="dato">Dato2</label>
+      <input type="text" name="dato" id="dato2"><br>
+      <label for="dato">Dato3</label>
+      <input type="text" name="dato" id="dato3"><br>
+      <label for="info">Parrafo</label>
+      <p id="info"></p>
+      <button onclick="pulsado()">pulsar</button>
+</body>
+</html>

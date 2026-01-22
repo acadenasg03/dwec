@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <script>
+            let cont = 0;
+            function sumar(){
+                  cont++;
+                  document.getElementsByTagName("h1")[0].innerHTML= "Contador: " + cont;
+            }
+            function restar(){
+                  cont--;
+                  document.getElementsByTagName("h1")[0].innerHTML= "Contador: " + cont;
+            }
+      </script>
+      <h1>Contador: 0</h1>
+      <button onclick="sumar()">+1</button>
+      <button onclick="restar()">-1</button>
+</body>
+</html>

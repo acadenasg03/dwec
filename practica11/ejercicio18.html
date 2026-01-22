@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <img id="imgCoche" src="coche.png" alt="coche" width="200px" >
+      <img id="imgMoto" src="moto.jpg" alt="moto" width="200px" >
+      <img id="imgPerro" src="perro.png" alt="perro" width="200px" >
+      <img id="imgGato" src="gato.jpg" alt="gato" width="200px" >
+      <img id="imgConejo" src="conejo.jpg" alt="conejo" width="200px" >
+      <script>            
+            let imagenes = document.getElementsByTagName("img")
+            for (let  i = 0;  i < imagenes.length;  i++) {
+                  console.log(imagenes[i].getAttribute("id"));
+                  document.getElementById(imagenes[i].getAttribute("id")).addEventListener("mouseover",function(){
+                        document.getElementById(imagenes[i].getAttribute("id")).setAttribute("width","400px");//.setAttribute("height","300px");
+                  });
+                  document.getElementById(imagenes[i].getAttribute("id")).addEventListener("mouseout",function(){
+                        document.getElementById(imagenes[i].getAttribute("id")).setAttribute("width","200px");//.setAttribute("height","100px");
+                  });
+            }
+      </script>
+</body>
+</html>

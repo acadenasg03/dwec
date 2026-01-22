@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <form action="">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" name="nombre" id="nombre"><br>
+            <p id="tNombre" style="color: red;"></p>
+            <label for="edad">Edad:</label><br>
+            <input type="number" name="edad" id="edad"><br>
+            <p id="tEdad" style="color: red;"></p>
+            <button type="button" disabled id="btn">Enviar</button><br><br>
+            <span id="texto">Formulario</span>
+      </form>
+      <script>
+            let nombre = document.getElementById("nombre"),
+                  edad = document.getElementById("edad"),
+                  pNombre = /^[A-Za-z]{3,}$/,
+                  nombreOK = false,
+                  edadOK = false;
+
+            function comprobarFormulario() {
+                  if(nombreOK && edadOK){
+                        document.getElementById("texto").innerHTML = "Campos correctos";
+                        document.getElementById("btn").disabled = false;
+                  }
+                  else{
+                        document.getElementById("texto").innerHTML = "Campos incorrectos";
+                        document.getElementById("btn").disabled = true;
+                  }
+            }
+            nombre.addEventListener("blur",function(){
+                  if(!pNombre.test(nombre.value)){
+                        document.getElementById("tNombre").innerHTML = "Error el nombre debe tener al menos 3 letras";
+                        nombreOK = false;
+                  }
+                  else{
+                        document.getElementById("tNombre").innerHTML = "";
+                        nombreOK= true;
+                  }
+                  comprobarFormulario();     
+            });
+            edad.addEventListener("blur",function(){
+                  if(parseInt(edad.value) < 18 || parseInt(edad.value) > 65){
+                        document.getElementById("tEdad").innerHTML = "Error la edad debe estar entre 18 y 65";
+                        edadOK = false;
+                  }
+                  else{
+                        document.getElementById("tEdad").innerHTML = "";
+                        edadOK= true;
+                  }
+                  comprobarFormulario();
+            });
+      </script>
+</body>
+</html>
