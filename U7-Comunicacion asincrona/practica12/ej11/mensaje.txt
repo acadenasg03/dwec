@@ -1,0 +1,1 @@
+Este mensaje está almacenado en un fichero llamado mensaje.txt
