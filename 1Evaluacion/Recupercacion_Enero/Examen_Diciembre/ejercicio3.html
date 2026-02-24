@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <form action="">
+            <h1>Sorteo</h1>
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre"><br>
+            <button type="button" onclick="agregar()">Agregar participante</button>
+            <button type="button" onclick="mostrar()">Mostrar participantes</button>
+            <button type="button" onclick="sortear()">Sortear ganador</button>
+            <button type="button" onclick="reiniciar()">Reiniciar sorteo</button>
+      </form>
+      <script>
+            let participantes = [];
+            function agregar(){
+                  let nombre = document.forms[0].nombre.value;
+                  if (nombre === "") {
+                        alert("El nombre no puede estar vacío.");
+                        return;
+                  }
+                  else{
+                        participantes.push(nombre);
+                        alert(nombre + " ha sido agregado a la lista de participantes.");
+                  }
+            }
+
+            function mostrar(){
+                  if(participantes.length > 0){
+                        let ventana= window.open("","","width=400,height=400");
+                        ventana.document.write("<h1>Lista Participantes</h1>");
+                        ventana.document.write("<ul>");
+                        for (let i = 0; i < participantes.length; i++) {
+                              ventana.document.write("<li>" + participantes[i] + "</li>");
+                        }
+                        ventana.document.write("</ul>");
+                  }
+            }
+            function sortear() {
+                  if (participantes.length === 0) { //No es necesario comprobar
+                        alert("No hay participantes para el sorteo.");
+                        return; 
+                  }
+                  let indice = Math.floor(Math.random() * participantes.length);
+                  let ganador = participantes[indice]; // Obtener el nombre del ganador
+
+                  participantes.splice(indice, 1); // Eliminar al ganador de la lista
+
+                  let ventana = window.open("", "", "width=300,height=200");
+                  ventana.document.write("<h2>GANADOR</h2><p>" + ganador + "</p>");
+            }
+
+            function reiniciar() {
+                  participantes = [];
+                  alert("Sorteo reiniciado");
+            }
+      </script>
+</body>
+</html>

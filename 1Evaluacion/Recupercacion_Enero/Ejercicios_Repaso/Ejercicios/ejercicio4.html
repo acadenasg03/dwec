@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <script>
+            function Coche(marca,combustible){
+                  this.marca = marca;
+                  this.combustible = combustible;
+            }
+            let lista =[
+                  new Coche("Toyota", "Gasolina"),
+                  new Coche("Tesla", "Eléctrico"),
+                  new Coche("Renault", "Diésel")
+            ];
+            function listarCoches(){
+                  let ventana = window.open("","","width=300,height=200");
+                  ventana.document.write("<h1>Listado de Coches</h1>");
+                  for (let i = 0; i < lista.length; i++) {
+                        ventana.document.write("<p>Marca: " + lista[i].marca + " Combustible: " + lista[i].combustible + "</p>");
+                        
+                  }
+            }
+            listarCoches();
+      </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <img id="imagen" src="./imgAnimales/conejo.jpg" alt="imagen" width="200"><br>
+      <button onclick="imgAleatoria()">Imagen Aleatoria</button>
+      <script>
+            function imgAleatoria() {
+                  let imagenes = ['http://127.0.0.1:5502/practica11/imgAnimales/conejo.jpg','http://127.0.0.1:5502/practica11/imgAnimales/gato.jpg',
+            'http://127.0.0.1:5502/practica11/imgAnimales/perro.png','http://127.0.0.1:5502/practica11/imgVehiculos/moto.jpg','http://127.0.0.1:5502/practica11/imgVehiculos/coche.png'];
+                  let random = Math.floor(Math.random() * imagenes.length);
+                  document.getElementById("imagen").setAttribute('src',imagenes[random]);
+            }
+      </script>
+</body>
+</html>

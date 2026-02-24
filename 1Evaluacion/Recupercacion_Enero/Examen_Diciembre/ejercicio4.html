@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <form action="" onsubmit="return validar()">
+            <h1>Formulario de solicitud de alquiler</h1>
+            <label for="nombre">Nombre</label><br>
+            <input type="text" name="nombre" id="nombre"><br>
+
+            <label for="dni">DNI</label><br>
+            <input type="text" name="dni" id="dni"><br>
+
+            <label for="tipo">Tipo de vehiculo(precio por dia)</label><br>
+            <input type="radio" name="tipo" id="coche" value="Coche" data-precio="35">Coche(35€/dia)
+            <br>
+            <input type="radio" name="tipo" id="moto" value="Moto" data-precio="20">Moto(20€/dia)
+            <br>
+            <input type="radio" name="tipo" id="furgo" value="Furgoneta" data-precio="50">Furgoneta(50€/dia)
+            <br>
+
+            <label for="duracion">Duracion del alquiler:</label><br>
+            <select name="duracion" id="duracion">
+                  <option value="">Selecciona:</option>
+                  <option value="1">1 dia</option>
+                  <option value="3">3 dias</option>
+                  <option value="7">7 dias</option>
+                  <option value="10">10 dias</option>
+            </select><br>
+
+            <label for="extras">Extras opcionales</label><br>
+            <input type="checkbox" name="extras" id="gps" value="GPS">GPS(5€ extra/dia)
+            <br>
+            <input type="checkbox" name="extras" id="silla" value="Silla infantil">Silla infantil(3€ extra/dia)
+            <br>
+            <input type="checkbox" name="extras" id="seguro" value="Seguro a todo riesgo">Seguro a todo riesgo(10€ extra/dia)
+            <br>
+
+            <button type="submit">Enviar Solicitud</button>
+            <button type="reset">Borrar todo</button>
+      </form>
+
+      <script>
+            function validar(){
+                  let nombre = document.forms[0].nombre.value;
+                  let dni = document.forms[0].dni.value;
+                  
+                  let duracion = document.forms[0].duracion.value;
+                  let extras = document.forms[0].extras;
+                  let pNom = /^[A-Za-z ]+$/;
+                  let pDNI = /^[0-9]{8}[A-Z]$/;
+
+                  if(!pNom.test(nombre)){
+                        alert("Nombre no valido");
+                        return false;
+                  }
+                  if(!pDNI.test(dni)){
+                        alert("DNI no valido");
+                        return false;
+                  }
+                  let vehiculos = document.forms[0].tipo;
+                  let tipo = "";
+                  let tipo_precio = 0;
+                  for (let i = 0; i < vehiculos.length; i++) {
+                        if (vehiculos[i].checked) {
+                              tipo = vehiculos[i].value; //Con value se obtiene el tipo de vehículo
+                              tipo_precio = parseFloat(vehiculos[i].dataset.precio); //Forma de obtener el precio desde el atributo data-precio
+                              break;
+                        }
+                  }
+                  if (tipo === "") {
+                        alert("Debe seleccionar un tipo de vehículo.");
+                        return false;
+                  }
+                  if(duracion == ""){
+                        alert("Elige una duracion");
+                        return false;
+                  }
+                  let extrasMarcados = [];
+                  let precioextras = 0;
+                  for(let j = 0; j < extras.length;j++){
+                        if(extras[j].checked){
+                              extrasMarcados.push(extras[j].value);
+
+                              if (extras[j].value === "GPS") {
+                                    precioextras += 5;
+                              }
+                              if (extras[j].value === "Silla infantil") {
+                                    precioextras += 3;
+                              }
+                              if (extras[j].value === "Seguro a todo riesgo") {
+                                    precioextras += 10;
+                              }
+                        }
+                  }
+                  if (extrasMarcados.length === 0){
+                        extrasMarcados.push("Ninguno");
+                  } 
+                  
+                  let ventana = window.open("","","width=400,height=400");
+                  ventana.document.write("<h1>Resumen de la solicitud</h1>");
+                  ventana.document.write("<p>Nombre: " + nombre + "</p>");
+                  ventana.document.write("<p>DNI: " + dni + "</p>");
+                  ventana.document.write("<p>Vehiculo: " + tipo + "</p>");
+                  ventana.document.write("<p>Precio vehiculo por dia: " + tipo_precio + "</p>");
+                  ventana.document.write("<p>Dias: " + duracion + "</p>");
+                  ventana.document.write("<p>Extras: " + extrasMarcados.join(", ") + "</p>");
+                  ventana.document.write("<p>Precio extras/dia: " + precioextras + "€</p>");
+                  ventana.document.write("<p>Precio total de vehiculo: " + (tipo_precio*duracion) + "</p>");
+                  ventana.document.write("<p>Total extras: " + (precioextras*duracion) + "</p>");
+                  ventana.document.write("<p>PRecio final: " + ((tipo_precio+precioextras)*duracion) + "</p>");
+                  
+            }
+      </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <form action="">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre"><br><br>
+            <label for="edad">Edad:</label>
+            <input type="number" name="edad" id="edad"><br><br>
+            <button type="button" id="aniadir">Añadir Usuario</button><br><br>
+            <button type="button" id="eliminar">Eliminar último usuario</button>
+      </form>
+      <h3>Lista Usuarios:</h3>
+      <ul id="lista">
+
+      </ul>
+      <script>
+            let nombres =[],
+                  edades = [];
+            let li = 0;
+            document.getElementById("aniadir").addEventListener("click",function(){
+                  if(document.getElementById("nombre").value.trim() == "" || document.getElementById("edad").value.trim() == ""){
+                        alert("Rellena los dos campos");
+                  }
+                  else{
+                        if( document.getElementById("edad").value < 0 || document.getElementById("edad").value > 100){
+                              alert("Rellena con el campo edad con un dato entre 0 y 100");
+                        }
+                        else{
+                              nombres.push(document.getElementById("nombre").value);
+                              edades.push(document.getElementById("edad").value);
+                              li = document.createElement("li");
+                              li.innerHTML = document.getElementById("nombre").value + "("+ document.getElementById("edad").value + ")";
+                              document.getElementById("lista").appendChild(li);
+                        }
+                  }
+
+            });
+            document.getElementById("eliminar").addEventListener("click",function(){
+                  if(nombres.length > 0){
+                        nombres.pop();
+                        edades.pop();
+                        document.getElementById("lista").removeChild(document.getElementById("lista").lastElementChild);
+                  }
+            });
+      </script>
+</body>
+</html>

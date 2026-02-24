@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de IVA</title>
+</head>
+<body>
+    <h1>Cálculo del Precio Final con IVA (21%)</h1>
+    <script type="text/javascript">
+        let p = parseFloat(prompt("Introduce el precio base sin IVA de un producto")),
+            iva = 21,
+            importIVA= (p * (iva/100));
+        document.write("El precio final es: " + (p + importIVA) + "<br>");
+        document.write("El importe de IVA es: " + importIVA);
+
+    </script>
+</body>
+</html>

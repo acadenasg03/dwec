@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <button id="btn1">Uno</button>
+      <button id="btn2">Dos</button>
+      <button id="btn3">Tres</button><br>
+      <span id="texto">Has pulsado el boton: </span>
+      <script>
+            document.getElementById("btn1").addEventListener("click",function(){
+                  document.getElementById("texto").innerHTML = "Has pulsado el boton: Uno";
+            });
+            document.getElementById("btn2").addEventListener("click",function(){
+                  document.getElementById("texto").innerHTML = "Has pulsado el boton: Dos";
+            });
+            document.getElementById("btn3").addEventListener("click",function(){
+                  document.getElementById("texto").innerHTML = "Has pulsado el boton: Tres";
+            });
+      </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso 1</title>
+      <script src="repaso01.js"></script>
+</head>
+<body>
+<h2>Formulario de inscripción al curso de informática</h2>
+  <form name="formrepaso" onsubmit="return validarFormulario();">
+      <p>
+        <label>Nombre completo:</label><br>
+        <input type="text" name="nombre">
+      </p>
+      <p>
+        <label>Correo electrónico:</label><br>
+        <input type="text" name="email">
+      </p>
+      <p>
+        <label>Edad:</label><br>
+        <input type="text" name="edad" size="3">
+      </p>
+      <p>
+        <label>Sexo:</label><br>
+          <input type="radio" name="sexo" value="Hombre"> Hombre
+          <input type="radio" name="sexo" value="Mujer"> Mujer
+      </p>
+      <p>
+        <label>Curso elegido:</label><br>
+          <select name="curso">
+            <option value="">Selecciona un curso:</option>
+            <option value="Sistemas Operativos">Sistemas Operativos</option>
+            <option value="Programación Web">Programación Web</option>
+            <option value="Bases de Datos">Bases de Datos</option>
+          </select>
+      </p>
+      <p>
+        <label>Intereses:</label><br>
+          <input type="checkbox" name="interes" value="Hardware"> Hardware
+          <input type="checkbox" name="interes" value="Software"> Software
+          <input type="checkbox" name="interes" value="Redes"> Redes
+      </p>
+      <p>
+        <label>Comentarios adicionales:</label><br>
+          <textarea name="comentarios" rows="4" cols="30"></textarea>
+      </p>
+      <p>
+          <input type="submit" value="Enviar">
+          <input type="reset" value="Limpiar">
+      </p>
+  </form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <script>
+
+            let contador = 1;
+
+            function añadirLI(){
+                  let li = document.createElement("li");
+                  li.innerHTML = "Elemento "+ contador;
+
+                  document.getElementById("lista").appendChild(li);
+
+                  contador++;
+            }
+
+      </script>
+      <ul id="lista"></ul>
+      <button onclick="añadirLI()">Añadir</button>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <form action="">
+            <label for="email">Email:</label><br>
+            <input type="email" name="email" id="email"><br>
+            <p id="tEmail"></p>
+            <label for="ps">Contraseña:</label><br>
+            <input type="password" name="ps" id="ps"><br>
+            <p id="tPs"></p>
+      </form>
+      <script>
+            let email = document.getElementById("email"),
+                  pwd = document.getElementById("ps"),
+                  textEmail = document.getElementById("tEmail"),
+                  textPwd = document.getElementById("tPs"),
+                  pEmail = /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-z]{2,}$/,
+                  pPWD = /^[A-Za-z0-9][A-Za-z0-9]{7,}$/;
+            email.addEventListener("focus",function(){
+                  textEmail.innerHTML = "Introduce un email valido (usuario@dominio.extension)";
+            });
+            email.addEventListener("blur",function(){
+                  textEmail.innerHTML = "";
+                  if (!pEmail.test(email.value)) {
+                       textEmail.innerHTML = "Error. Email incorrecto";
+                  }
+            });
+            pwd.addEventListener("focus",function(){
+                  textPwd.innerHTML = "La contraseña debe tener al menos 8 caracteres";
+            });
+            pwd.addEventListener("blur",function(){
+                  textPwd.innerHTML = "";
+                  if (!pPWD.test(pwd.value)) {
+                       textPwd.innerHTML = "Error. Contraseña demasiado corta";
+                  }
+            })
+      </script>
+</body>
+</html>

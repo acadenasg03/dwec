@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 04</title>
+</head>
+<body>
+
+<h2>Formulario de solicitud de alquiler de vehículo</h2>
+
+<form name="formAlquiler">
+
+    <p>
+        <label>Nombre del cliente:</label><br>
+        <input type="text" name="nombre">
+    </p>
+
+    <p>
+        <label>DNI:</label><br>
+        <input type="text" name="dni">
+    </p>
+
+    <p>
+        <label>Tipo de vehículo (precio por día):</label><br>
+        <input type="radio" name="vehiculo" value="Coche" data-precio="35">
+        Coche (35 €/día) <br>
+
+        <input type="radio" name="vehiculo" value="Moto" data-precio="20">
+        Moto (20 €/día) <br>
+
+        <input type="radio" name="vehiculo" value="Furgoneta" data-precio="50">
+        Furgoneta (50 €/día)
+    </p>
+
+    <p>
+        <label>Duración del alquiler:</label><br>
+        <select name="duracion">
+            <option value="">Selecciona:</option>
+            <option value="1">1 día</option>
+            <option value="3">3 días</option>
+            <option value="7">7 días</option>
+            <option value="10">10 días</option>
+        </select>
+    </p>
+
+    <p>
+        <label>Extras opcionales:</label><br>
+        <input type="checkbox" name="extra" value="GPS"> GPS (5 € extra/día) <br>
+        <input type="checkbox" name="extra" value="Silla infantil"> Silla infantil (3 € extra/día) <br>
+        <input type="checkbox" name="extra" value="Seguro a todo riesgo"> Seguro a todo riesgo (10 € extra/día)
+    </p>
+
+    <p>
+        <input type="button" value="Enviar solicitud" onclick="validarFormulario()">
+        <input type="reset" value="Borrar todo">
+    </p>
+
+</form>
+
+<script src="Ejercicio04.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <script>
+            let n = parseInt(prompt("Cuantos numero aleatorios quieres gennerar?")),
+                  numeros =  [];
+            for (let i = 0; i < n; i++) {
+                  numeros.push(Math.floor(Math.random() * 10) + 1);
+            }
+            let ventana = window.open("","","width=300,height=200");
+            ventana.document.write("Numero generados:");
+            ventana.document.write("<ul>");
+            for(let j = 0; j < numeros.length; j++){
+                  ventana.document.write("<li>" + numeros[j] + "</li>");
+            }
+            ventana.document.write("</ul>");
+            ventana.document.write(numeros);
+
+      </script>
+</body>
+</html>

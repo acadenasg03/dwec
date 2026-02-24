@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <script src="ej1.js"></script>
+</head>
+<body>
+      <form action="" onsubmit="return validar()">
+
+            <h1>Formulario de Registro</h1>
+            <label for="nombre">Nombre completo</label><br>
+            <input type="text" name="nombre" id="nombre"><br>
+      
+            <label for="correo">Correo Electronico</label><br>
+            <input type="email" name="correo" id="correo"><br>
+      
+            <label for="edad">Edad</label><br>
+            <input type="number" name="edad" id="edad"><br>
+      
+            <label for="sexo">Sexo</label><br>
+            <label for="hombre">Hombre</label>
+            <input type="radio" name="sexo" id="hombre">
+            <label for="mujer">Mujer</label>
+            <input type="radio" name="sexo" id="mujer"><br><br>
+      
+            <label for="curso">Curso Elegido</label>
+            <select name="curso" id="curso">
+                  <option value="">Selecciona un curso:</option>
+                  <option>Sistemas Operativos</option>
+                  <option>Programación web</option>
+                  <option>Bases de datos</option>
+            </select><br>
+            
+            <label for="intereses">Intereses:</label><br>
+            <label for="hw">Hardaware</label>
+            <input type="checkbox" name="intereses" id="hw" value="Hardaware">
+            <label for="sw">Software</label>
+            <input type="checkbox" name="intereses" id="sw" value="Software">
+            <label for="redes">Redes</label>
+            <input type="checkbox" name="intereses" id="redes" value="Redes"><br>
+      
+            <label for="comentarios">Comentarios adicionales:</label><br>
+            <textarea name="comentarios" id="comentarios"></textarea><br>
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpiar</button>
+      </form>
+
+</body>
+</html>

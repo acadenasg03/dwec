@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <input type="text" name="texto" id="texto"><br>
+      <span id="tecla">Tecla pulsada: </span>
+      <script>
+            document.getElementById("texto").addEventListener("keyup", function() {
+                  let t = document.getElementById("texto").value;
+                  document.getElementById("tecla").innerHTML = "Tecla pulsada: " + t.charAt(t.length -1);
+            });
+      </script>
+</body>
+</html>

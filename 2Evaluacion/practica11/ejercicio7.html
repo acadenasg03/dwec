@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <label for="fila">Fila</label>
+      <input type="number" name="fila" id="fila">
+      <button onclick="generarTabla()">Crear Tabla</button>
+      <table id="tabla" border="1"></table>
+      <script>
+            function generarTabla(){
+                  let f = document.getElementById("fila").value;
+                  //let tabla = document.createElement("table");
+                  let tabla = document.getElementById("tabla");
+                  tabla.innerHTML="";
+                  //tabla.border="1";
+                  for (let i = 0; i < f; i++) {
+                        let fila = document.createElement("tr");
+                        let columna1 = document.createElement("td");
+                        let columna2 = document.createElement("td");
+                        columna1.innerHTML = "columna1";
+                        columna2.innerHTML = "columna2";
+                        fila.appendChild(columna1);
+                        fila.appendChild(columna2);
+                        tabla.appendChild(fila);
+                  }
+                  document.body.appendChild(tabla);
+            }
+      </script>
+</body>
+</html>

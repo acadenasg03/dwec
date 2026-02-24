@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <img src="./imgAnimales/conejo.jpg" alt="conejo" width="100">
+      <img src="./imgAnimales/gato.jpg" alt="gato" width="100">
+      <img src="./imgAnimales/perro.png" alt="perro" width="100">
+      <img src="./imgVehiculos/coche.png" alt="coche" width="100">
+      <img src="./imgVehiculos/moto.jpg" alt="moto" width="100">
+      <p id="cont">Numero de imagenes : 0</p>
+      <button onclick="contar()">Contar</button>
+      <script>
+            function contar(){
+                  let imagenes = document.getElementsByTagName("img");
+                  let p = document.getElementById("cont");
+                  p.innerHTML = "Numero de imagenes: " + imagenes.length;
+                  for (let i = 0; i <= imagenes.length; i++) {
+                        p.innerHTML = p.innerHTML + " <br> Imagen"+(i+1)+":"+ imagenes[i].src;
+                        console.log(imagenes[i].src);
+                  }
+            }
+      </script>
+</body>
+</html>

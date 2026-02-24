@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <form action="" onsubmit="return validar()">
+            <h1>Registro de usuarios</h1>
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" name="nombre" id="nombre"><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" name="email" id="email">
+
+            <button type="submit">Guardar</button>
+      </form>
+
+      <script>
+            let nombres = [];
+            let emails = [];
+            function validar(){
+                  let nombre = document.forms[0].nombre.value;
+                  let email = document.forms[0].email.value;
+                  let pNom = /[A-Za-z]{4,}$/;
+                  let pEmail = /[A-Za-z0-9_-]+@[A-Za-z0-9]+\.[a-zA-Z]{2,}$/;
+                  if(!pNom.test(nombre)){
+                        alert("Error pasa in nombre correcto");
+                        return false;
+                  }
+                  if(!pEmail.test(email)){
+                        alert("Error pasa un email correcto");
+                        return false;
+                  }
+                  else{
+                        nombres.push(nombre);
+                        emails.push(email);
+                        let ventana = window.open("","","width=300,height=200");
+                        ventana.document.write("<h1>Usuarios Registrados</h1>");
+                        ventana.document.write("<h2>Nombre  Email</h2>");
+                        for(let i = 0; i < nombres.length;i++){
+                              ventana.document.write("<p>" + nombres[i] + "   " + emails[i] + "</p>");
+                        }
+                        
+                  }
+
+            }
+      </script>
+</body>
+</html>
